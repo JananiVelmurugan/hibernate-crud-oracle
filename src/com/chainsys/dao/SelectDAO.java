@@ -18,10 +18,11 @@ public class SelectDAO {
 		// getting transaction object from session object
 		session.beginTransaction();
 
-		List<Book> books = session.createQuery("from books", Book.class).list();
+		List<Book> books = session.createQuery("from Book", Book.class).list();
 		books.forEach(b -> {
 			System.out.println(b.getId());
 			System.out.println(b.getName());
+			System.out.println(b.getAuthor());
 		});
 
 		/*

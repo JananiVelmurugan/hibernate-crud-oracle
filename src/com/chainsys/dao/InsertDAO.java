@@ -3,6 +3,7 @@ package com.chainsys.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.chainsys.model.Author;
 import com.chainsys.model.Book;
 import com.chainsys.util.HibernateUtil;
 
@@ -11,6 +12,10 @@ public class InsertDAO {
 		// Create student entity object
 		Book book = new Book();
 		book.setName("Java");
+
+		Author author = new Author();
+		author.setName("Herbert");
+		book.setAuthor(author);
 
 		// Create session factory object
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

@@ -16,12 +16,11 @@ public class DeleteDAO {
 		Session session = sessionFactory.openSession();
 		// getting transaction object from session object
 		session.beginTransaction();
-		Book book = (Book) session.get(Book.class, 4);
+		Book book = (Book) session.get(Book.class, 4L);
 		if (book != null) {
 			System.out.println("Deleted Successfully");
 			session.delete(book);
-		}
-		else{
+		} else {
 			System.out.println("No Record Found");
 		}
 		session.getTransaction().commit();

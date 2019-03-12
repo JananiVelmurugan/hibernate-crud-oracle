@@ -15,8 +15,9 @@ public class UpdateDAO {
 		// getting transaction object from session object
 		session.beginTransaction();
 
-		Book book = (Book) session.get(Book.class, 1);
+		Book book = (Book) session.get(Book.class, 1L);
 		book.setName("Python");
+		session.saveOrUpdate(book);
 		System.out.println("Updated Successfully");
 		session.getTransaction().commit();
 		sessionFactory.close();

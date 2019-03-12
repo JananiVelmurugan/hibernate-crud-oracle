@@ -17,7 +17,8 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
-
 		<mapping class="com.chainsys.model.Book" />
+
+		<mapping class="com.chainsys.model.Author" />
 	</session-factory>
 </hibernate-configuration>
