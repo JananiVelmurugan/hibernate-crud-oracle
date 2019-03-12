@@ -1,13 +1,10 @@
 package com.chainsys.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,16 +20,16 @@ public class Author {
 	@Column(name = "name", unique = true, length = 255)
 	private String name;
 
-	@OneToMany(mappedBy = "author")
-	private Set<Book> books;
+	// @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+	// private Set<Book> books;
 
-	public Set<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(Set<Book> books) {
-		this.books = books;
-	}
+	// public Set<Book> getBooks() {
+	// return books;
+	// }
+	//
+	// public void setBooks(Set<Book> books) {
+	// this.books = books;
+	// }
 
 	public Long getId() {
 		return id;
@@ -52,7 +49,12 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", name=" + name + ", books=" + books + "]";
+		return "Author [id=" + id + ", name=" + name + "]";
 	}
+
+	// @Override
+	// public String toString() {
+	// return "Author [id=" + id + ", name=" + name + ", books=" + books + "]";
+	// }
 
 }
